@@ -23,7 +23,5 @@ def run():
         for key, value in values.items():
             print(key, '-', value) 
 
-
-
 if __name__ == '__main__':
     run()
