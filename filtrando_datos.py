@@ -79,8 +79,32 @@ def run():
     adults = list(map(lambda worker: worker['name'], adults))
     old_people = list(map(lambda worker: worker | {'old': worker['age'] > 70}, DATA))
 
-    for worker in old_people:
+    all_python_devs2 = list(filter(lambda worker: worker['language'] == 'python', DATA))
+    all_python_devs2 = list(map(lambda worker: worker['name'], all_python_devs2))
+
+    all_Platzi_workers2 = list(filter(lambda worker: worker['organization'] == 'Platzi', DATA))
+    all_Platzi_workers2 = list(map(lambda worker: worker['name'], all_Platzi_workers2))
+
+    adults2 = [worker['name'] for worker in DATA if worker['age'] > 18]
+    old_people2 = [worker['name'] for worker in DATA if worker['age'] > 70]
+
+
+
+    # for worker in old_people:
+    #     print(worker)
+
+    for worker in all_python_devs2:
         print(worker)
+
+
+    for worker in all_Platzi_workers2:
+        print('\n' + worker)
+
+    for worker in adults2:
+        print(worker)
+
+    for worker in old_people2:
+        print('\n' + worker)
 
 if __name__ == '__main__':
     run()
